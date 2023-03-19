@@ -24,6 +24,6 @@ export const LetsTourContext = createContext<TTourContext>({
   handleNext: () => {}
 });
 
-export const useLetsTourContext = ({ onTourFinish }: { onTourFinish?: () => void } = {}) => {
+export const useLetsTourContext = () => {
   return useContext(LetsTourContext);
 };
