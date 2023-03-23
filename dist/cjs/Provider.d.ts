@@ -24,7 +24,7 @@ export interface ILetsTourProviderProps extends TExtendedMaskProps {
      */
     onClose?: () => void;
     /**
-     * Fired whenever the Tour Open is Closed state is changed
+     * Fired whenever the Tour Open or Closed state is changed
      * Allows the component to be controlled
      */
     onChange?: (isOpen: boolean) => void;

@@ -85,7 +85,7 @@ const App = () => {
 
 #### `isOpen?: boolean`
 
-Allow Tourer to be a controlled component
+Allow Tourer to be a controlled component/
 @default false
 
 #### `steps: LetsTourStep[]`
@@ -106,7 +106,7 @@ Fired whenever the Tour is closed
 
 #### `onChange?: (isOpen: boolean) => void`
 
-Fired whenever the Tour Open is Closed state is changed
+Fired whenever the Tour Open or Closed state is changed/
 Allows the component to be controlled
 
 #### `isDismissible?: boolean`
@@ -115,7 +115,7 @@ Should the Tour be dismissible by the user clicking on the backdrop?
 
 #### `maskPadding?: [number, number]`
 
-Padding around the Highlighted Area
+Padding around the Highlighted Area/
 @default [0, 0]
 
 #### `onBackdropClick?: MouseEventHandler<HTMLDivElement>`
@@ -135,6 +135,10 @@ ClassName for the Tour backdrop
 ClassName for the highlighted area of the Tour
 
 #### `maskStyles?: Record`
+
+Styles for the Mask/
+Optionally extend the default styles using the `base` param
+
 ```ts
 maskStyles?: {
     /**
@@ -162,6 +166,3 @@ maskStyles?: {
     ) => CSSProperties;
   };
 ```
-
-Styles for the Mask
-Optionally extend the default styles using the `base` param

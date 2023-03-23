@@ -27,7 +27,7 @@ export type TExtendedMaskProps = {
     highlightedAreaClassName?: string;
     /**
      * Styles for the Mask
-     * Optionally extend the default styles using `base`
+     * Optionally extend the default styles using the `base` param
      */
     maskStyles?: {
         /**
