@@ -4,6 +4,8 @@ Dead simple React element Walk-Through package. Powered by [Popper.js](https://p
 
 Styling of popover is completely upto you!
 
+> We're in Beta, breaking changes to come 😘
+
 Coded with ❤️ by [owenjs](https://github.com/owenjs)
 
 ## Install
