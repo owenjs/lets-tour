@@ -4,6 +4,10 @@ import { useLetsTourContext } from "./Context";
 
 export type TExtendedMaskProps = {
   /**
+   * Should the Tour be dismissible by the user clicking on the backdrop?
+   */
+  isDismissible?: boolean;
+  /**
    * ClassName for the Tour backdrop
    */
   backdropClassName?: string;
@@ -33,6 +37,8 @@ const Mask: FC<IProps> = props => {
   const { referenceElement } = props;
 
   const {
+    setIsOpen,
+    isDismissible,
     backdropClassName,
     highlightedAreaClassName,
     maskStyles = {
@@ -40,6 +46,10 @@ const Mask: FC<IProps> = props => {
       highlightedArea: base => ({ ...base })
     }
   } = useLetsTourContext();
+
+  const handleBackDropClick = () => {
+    if (isDismissible) setIsOpen(false);
+  };
 
   const maskId = useId();
   const clipId = useId();
@@ -50,6 +60,7 @@ const Mask: FC<IProps> = props => {
       clipId={clipId}
       className={backdropClassName}
       highlightedAreaClassName={highlightedAreaClassName}
+      onClick={handleBackDropClick}
       sizes={
         referenceElement?.getBoundingClientRect() || {
           bottom: 0,

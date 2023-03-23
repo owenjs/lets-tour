@@ -41,6 +41,7 @@ export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = p
     onOpen,
     onClose,
     onChange,
+    isDismissible,
     backdropClassName,
     highlightedAreaClassName,
     maskStyles
@@ -119,6 +120,7 @@ export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = p
         handleEndTour,
         handleBack,
         handleNext,
+        isDismissible,
         backdropClassName,
         highlightedAreaClassName,
         maskStyles
