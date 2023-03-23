@@ -78,3 +78,90 @@ const App = () => {
   );
 };
 ```
+
+## Component API
+
+### LetsTourProvider
+
+#### `isOpen?: boolean`
+
+Allow Tourer to be a controlled component
+@default false
+
+#### `steps: LetsTourStep[]`
+
+Each step in the Tour, see LetsTourStep
+
+#### `component: () => ReactNode`
+
+Component to render the popover
+
+#### `onOpen?: () => void`
+
+Fired whenever the Tour is opened
+
+#### `onClose?: () => void`
+
+Fired whenever the Tour is closed
+
+#### `onChange?: (isOpen: boolean) => void`
+
+Fired whenever the Tour Open is Closed state is changed
+Allows the component to be controlled
+
+#### `isDismissible?: boolean`
+
+Should the Tour be dismissible by the user clicking on the backdrop?
+
+#### `maskPadding?: [number, number]`
+
+Padding around the Highlighted Area
+@default [0, 0]
+
+#### `onBackdropClick?: MouseEventHandler<HTMLDivElement>`
+
+Event handler for user clicks on the Tour backdrop
+
+#### `onHighlightedAreaClick?: MouseEventHandler<SVGRectElement>`
+
+Event handler for user clicks on the Highlighted Area
+
+#### `backdropClassName?: string`
+
+ClassName for the Tour backdrop
+
+#### `highlightedAreaClassName?: string`
+
+ClassName for the highlighted area of the Tour
+
+#### `maskStyles?: Record`
+```ts
+maskStyles?: {
+    /**
+     * Styles for the Tour backdrop
+     * @param base default styles
+     */
+    backdrop?: (base: CSSProperties) => CSSProperties;
+    /**
+     * Styles for the Tour Highlighted Area
+     * @param base default styles
+     * @param props
+     * @param props.x x position of the Highlighted Area
+     * @param props.y y position of the Highlighted Area
+     * @param props.width width of the Highlighted Area
+     * @param props.height height of the Highlighted Area
+     */
+    highlightedArea?: (
+      base: CSSProperties,
+      props: {
+        x: number;
+        y: number;
+        width: number;
+        height: number;
+      }
+    ) => CSSProperties;
+  };
+```
+
+Styles for the Mask
+Optionally extend the default styles using the `base` param
