@@ -44,7 +44,9 @@ export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = p
     isDismissible,
     backdropClassName,
     highlightedAreaClassName,
-    maskStyles
+    maskStyles,
+    onBackdropClick,
+    onHighlightedAreaClick
   } = props;
 
   const [isOpen, setIsOpen] = useState(props.isOpen || false);
@@ -123,7 +125,9 @@ export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = p
         isDismissible,
         backdropClassName,
         highlightedAreaClassName,
-        maskStyles
+        maskStyles,
+        onBackdropClick,
+        onHighlightedAreaClick
       }}
     >
       {children}

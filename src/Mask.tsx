@@ -1,4 +1,4 @@
-import React, { FC, useId, CSSProperties } from "react";
+import React, { FC, useId, CSSProperties, MouseEventHandler } from "react";
 import { Mask as ReacTourMask } from "@reactour/mask";
 import { useLetsTourContext } from "./Context";
 
@@ -8,6 +8,14 @@ export type TExtendedMaskProps = {
    */
   isDismissible?: boolean;
   /**
+   * Event handler for user clicks on the Tour backdrop
+   */
+  onBackdropClick?: MouseEventHandler<HTMLDivElement>;
+  /**
+   * Event handler for user clicks on the Highlighted Area
+   */
+  onHighlightedAreaClick?: MouseEventHandler<SVGRectElement>;
+  /**
    * ClassName for the Tour backdrop
    */
   backdropClassName?: string;
@@ -15,8 +23,25 @@ export type TExtendedMaskProps = {
    * ClassName for the highlighted area of the Tour
    */
   highlightedAreaClassName?: string;
+  /**
+   * Styles for the Mask
+   * Optionally extend the default styles using `base`
+   */
   maskStyles?: {
+    /**
+     * Styles for the Tour backdrop
+     * @param base default styles
+     */
     backdrop?: (base: CSSProperties) => CSSProperties;
+    /**
+     * Styles for the Tour Highlighted Area
+     * @param base default styles
+     * @param props
+     * @param props.x x position of the Highlighted Area
+     * @param props.y y position of the Highlighted Area
+     * @param props.width width of the Highlighted Area
+     * @param props.height height of the Highlighted Area
+     */
     highlightedArea?: (
       base: CSSProperties,
       props: {
@@ -44,11 +69,19 @@ const Mask: FC<IProps> = props => {
     maskStyles = {
       backdrop: base => ({ ...base }),
       highlightedArea: base => ({ ...base })
-    }
+    },
+    onBackdropClick,
+    onHighlightedAreaClick
   } = useLetsTourContext();
 
-  const handleBackDropClick = () => {
+  /**
+   * Dismiss the Tour if the user clicks on the backdrop
+   * @param e HTMLDivElement click event
+   */
+  const handleBackDropClick: MouseEventHandler<HTMLDivElement> = e => {
     if (isDismissible) setIsOpen(false);
+
+    onBackdropClick?.(e);
   };
 
   const maskId = useId();
@@ -61,6 +94,7 @@ const Mask: FC<IProps> = props => {
       className={backdropClassName}
       highlightedAreaClassName={highlightedAreaClassName}
       onClick={handleBackDropClick}
+      onClickHighlighted={onHighlightedAreaClick}
       sizes={
         referenceElement?.getBoundingClientRect() || {
           bottom: 0,
