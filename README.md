@@ -140,7 +140,7 @@ Styles for the Mask\
 Optionally extend the default styles using the `base` param
 
 ```ts
-maskStyles?: {
+type maskStyles = {
     /**
      * Styles for the Tour backdrop
      * @param base default styles
@@ -164,5 +164,5 @@ maskStyles?: {
         height: number;
       }
     ) => CSSProperties;
-  };
+};
 ```
