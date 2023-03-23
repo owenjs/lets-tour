@@ -15,7 +15,7 @@ yarn add @owenjs/lets-tour
 ## Usage
 
 ```typescript jsx
-import { LetsTourProvider, useLetsTourContext } from "lets-tour";
+import { LetsTourProvider, useLetsTourContext } from "@owenjs/lets-tour";
 import { useEffect, useMemo } from "react";
 
 const STEPS = [
