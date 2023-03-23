@@ -81,7 +81,7 @@ const App = () => {
 
 ## Component API
 
-### `<LetsTourProvider />`
+### LetsTourProvider
 
 #### `isOpen?: boolean`
 
@@ -90,7 +90,7 @@ Allow Tourer to be a controlled component\
 
 #### `steps: LetsTourStep[]`
 
-Each step in the Tour, see LetsTourStep
+Each step in the Tour, see [LetsTourStep](#LetsTourStep)
 
 #### `component: () => ReactNode`
 
@@ -166,3 +166,54 @@ type maskStyles = {
     ) => CSSProperties;
 };
 ```
+
+### useLetsTourContext
+
+#### `steps: LetsTourStep[]`
+
+Each step in the Tour, see [LetsTourStep](#LetsTourStep)
+
+#### `isOpen: boolean`
+
+Open state of the Tour
+
+#### `setIsOpen: Dispatch<SetStateAction<boolean>>`
+
+Set state for the open state of the Tour
+
+#### `currentStep: number`
+
+Current step of the Tour (starting at 0)
+
+#### `setCurrentStep: Dispatch<SetStateAction<number>>`
+
+Set state for the current step of the Tour (starting at 0)
+
+#### `handleEndTour: () => void`
+
+End the Tour programmatically
+
+#### `handleBack: () => void`
+
+Go back a step in the Tour
+
+#### `handleNext: () => void`
+
+Go forward a step in the Tour
+
+### LetsTourStep
+
+#### `selector: string`
+
+CSS selector use to position of the Tour Popover
+
+#### `placement?: Placement`
+
+Placement of Tour Popover around selected element\
+@default auto
+
+#### `offset?: [number, number]`
+
+Offset the Tour Popper\
+If not set, matches [`maskPadding`](#maskpadding-number-number)\
+@default [0, 0]
