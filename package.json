@@ -13,6 +13,10 @@
   },
   "author": "owenjs",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/owenjs/lets-tour"
+  },
   "devDependencies": {
     "@3sidedcube/prettier-config": "^1.0.0",
     "@popperjs/core": "^2.11.6",
