@@ -81,7 +81,7 @@ const App = () => {
 
 ## Component API
 
-### LetsTourProvider
+## LetsTourProvider
 
 #### `isOpen?: boolean`
 
@@ -167,7 +167,7 @@ type maskStyles = {
 };
 ```
 
-### useLetsTourContext
+## useLetsTourContext
 
 #### `steps: LetsTourStep[]`
 
@@ -201,7 +201,7 @@ Go back a step in the Tour
 
 Go forward a step in the Tour
 
-### LetsTourStep
+## LetsTourStep
 
 #### `selector: string`
 
