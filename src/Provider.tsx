@@ -1,9 +1,10 @@
 import React, { FC, PropsWithChildren, ReactNode, useEffect, useState } from "react";
+import { TExtendedMaskProps } from "./Mask";
 import { LetsTourContext } from "./Context";
 import { Tourer } from "./Tourer";
 import { LetsTourStep } from "./types";
 
-export interface ILetsTourProviderProps {
+export interface ILetsTourProviderProps extends TExtendedMaskProps {
   /**
    * Allow Tourer to be a controlled component
    * @default false
@@ -33,7 +34,17 @@ export interface ILetsTourProviderProps {
 }
 
 export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = props => {
-  const { children, component, steps, onOpen, onClose, onChange } = props;
+  const {
+    children,
+    component,
+    steps,
+    onOpen,
+    onClose,
+    onChange,
+    backdropClassName,
+    highlightedAreaClassName,
+    maskStyles
+  } = props;
 
   const [isOpen, setIsOpen] = useState(props.isOpen || false);
   const [currentStep, setCurrentStep] = useState(0);
@@ -107,7 +118,10 @@ export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = p
         setCurrentStep,
         handleEndTour,
         handleBack,
-        handleNext
+        handleNext,
+        backdropClassName,
+        highlightedAreaClassName,
+        maskStyles
       }}
     >
       {children}

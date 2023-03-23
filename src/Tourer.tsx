@@ -2,7 +2,7 @@ import React, { FC, PropsWithChildren, ReactNode, useEffect, useState } from "re
 import ReactDOM from "react-dom";
 import { usePopper } from "react-popper";
 import { useLetsTourContext } from "./Context";
-import { Mask } from "@reactour/mask";
+import Mask from "./Mask";
 
 export interface ITourerProps {
   render: () => ReactNode;
@@ -40,20 +40,7 @@ export const Tourer: FC<PropsWithChildren<ITourerProps>> = props => {
         {render()}
       </div>
 
-      <Mask
-        sizes={
-          referenceElement?.getBoundingClientRect() || {
-            bottom: 0,
-            height: 0,
-            left: 0,
-            right: 0,
-            top: 0,
-            width: 0,
-            x: 0,
-            y: 0
-          }
-        }
-      />
+      <Mask referenceElement={referenceElement} />
     </>,
     document.querySelector("body")!
   );

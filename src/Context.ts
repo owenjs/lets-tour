@@ -1,3 +1,4 @@
+import { TExtendedMaskProps } from "./Mask";
 import { LetsTourStep } from "./types";
 import { createContext, Dispatch, SetStateAction, useContext } from "react";
 
@@ -10,7 +11,7 @@ export type TTourContext = {
   handleEndTour: () => void;
   handleBack: () => void;
   handleNext: () => void;
-};
+} & TExtendedMaskProps;
 
 export const LetsTourContext = createContext<TTourContext>({
   steps: [],
@@ -25,5 +26,6 @@ export const LetsTourContext = createContext<TTourContext>({
 });
 
 export const useLetsTourContext = () => {
+  // ToDo: removed private variables from the return
   return useContext(LetsTourContext);
 };
