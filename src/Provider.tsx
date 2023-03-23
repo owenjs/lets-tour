@@ -1,19 +1,64 @@
-import React, { FC, PropsWithChildren, ReactNode, useState } from "react";
+import React, { FC, PropsWithChildren, ReactNode, useEffect, useState } from "react";
 import { LetsTourContext } from "./Context";
 import { Tourer } from "./Tourer";
 import { LetsTourStep } from "./types";
 
 export interface ILetsTourProviderProps {
+  /**
+   * Allow Tourer to be a controlled component
+   * @default false
+   */
   isOpen?: boolean;
+  /**
+   * Each step in the Tour
+   */
   steps: LetsTourStep[];
-  popoverRender: () => ReactNode;
+  /**
+   * Component to render the popover
+   */
+  component: () => ReactNode;
+  /**
+   * Fired whenever the Tour is opened
+   */
+  onOpen?: () => void;
+  /**
+   * Fired whenever the Tour is closed
+   */
+  onClose?: () => void;
+  /**
+   * Fired whenever the Tour Open is Closed state is changed
+   * Allows the component to be controlled
+   */
+  onChange?: (isOpen: boolean) => void;
 }
 
 export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = props => {
-  const { children, popoverRender, steps } = props;
+  const { children, component, steps, onOpen, onClose, onChange } = props;
 
   const [isOpen, setIsOpen] = useState(props.isOpen || false);
   const [currentStep, setCurrentStep] = useState(0);
+
+  /**
+   * Allow state to be controlled from above
+   */
+  useEffect(() => {
+    if (!props.isOpen) return;
+
+    setIsOpen(props.isOpen);
+  }, [props.isOpen]);
+
+  /**
+   * Fire listener events whenever the open state changes
+   */
+  useEffect(() => {
+    onChange?.(isOpen);
+
+    if (isOpen) {
+      onOpen?.();
+    } else {
+      onClose?.();
+    }
+  }, [isOpen]);
 
   /**
    * Handle the Tour Ending
@@ -67,7 +112,7 @@ export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = p
     >
       {children}
 
-      <Tourer render={popoverRender} />
+      <Tourer render={component} />
     </LetsTourContext.Provider>
   );
 };

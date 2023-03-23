@@ -1,3 +1,5 @@
+import { Placement } from "@popperjs/core";
+
 export type LetsTourStep = {
   /**
    * CSS selector use to position of the Tour Popover
@@ -5,7 +7,7 @@ export type LetsTourStep = {
   selector: string;
   /**
    * Placement of Tour Popover around selected element
-   * @default right
+   * @default auto
    */
-  placement?: "top" | "left" | "right" | "bottom";
+  placement?: Placement;
 };

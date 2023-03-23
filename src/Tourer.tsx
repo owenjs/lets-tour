@@ -18,7 +18,7 @@ export const Tourer: FC<PropsWithChildren<ITourerProps>> = props => {
 
   // Popper.js
   const { styles, attributes } = usePopper(referenceElement, popperElement, {
-    placement: steps[currentStep].placement || "right"
+    placement: steps[currentStep].placement
   });
 
   /**
