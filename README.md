@@ -1,0 +1,63 @@
+# Lets Tour
+
+Coded with ❤️ by [owenjs](https://github.com/owenjs)
+
+## Install
+
+```shell
+yarn add @owenjs/lets-tour
+```
+
+## Usage
+
+```typescript jsx
+import { LetsTourProvider, useLetsTourContext } from "lets-tour";
+import { useEffect, useMemo } from "react";
+
+const STEPS = [
+  {
+    selector: ".step-1"
+  },
+  {
+    selector: ".step-2"
+  }
+];
+
+const Popover = () => {
+  const { currentStep, handleBack, handleNext } = useLetsTourContext();
+
+  const content = useMemo(() => {
+    switch (currentStep) {
+      case 0:
+        return "Step 1"
+      case 1:
+        return "Step 2"
+    }
+  }, [currentStep]);
+
+  return (
+    <div style={{background: "#ffffff"}}>
+      {content}
+      <button onClick={handleBack}>Back</button>
+      <button onClick={handleNext}>Next</button>
+    </div>
+  );
+};
+
+const App = () => {
+  const { setIsOpen } = useLetsTourContext();
+  
+  const handleOpenTour = () => {
+    setIsOpen(true)
+  };
+  
+  return (
+    <LetsTourProvider steps={STEPS} component={Popover}>
+      <div className="step-1">Step 1 Item</div>
+      <div className="step-2">Step 2 Item</div>
+      
+      <button onClick={handleOpenTour}>Open Tour</button>
+    </LetsTourProvider>
+  );
+};
+```
