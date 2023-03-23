@@ -18,6 +18,9 @@ yarn add @owenjs/lets-tour
 import { LetsTourProvider, useLetsTourContext } from "@owenjs/lets-tour";
 import { useEffect, useMemo } from "react";
 
+/**
+ * Each step in the Tour
+ */
 const STEPS = [
   {
     selector: ".step-1"
@@ -27,6 +30,9 @@ const STEPS = [
   }
 ];
 
+/**
+ * Popover component and Styling
+ */
 const Popover = () => {
   const { currentStep, handleBack, handleNext } = useLetsTourContext();
 
@@ -48,6 +54,9 @@ const Popover = () => {
   );
 };
 
+/**
+ * Main app component
+ */
 const App = () => {
   const { setIsOpen } = useLetsTourContext();
   
@@ -61,6 +70,8 @@ const App = () => {
       <div className="step-2">Step 2 Item</div>
       
       <button onClick={handleOpenTour}>Open Tour</button>
+      
+      {/* Rest of your React App! */}
     </LetsTourProvider>
   );
 };
