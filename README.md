@@ -81,7 +81,7 @@ const App = () => {
 
 ## Component API
 
-### LetsTourProvider
+### `<LetsTourProvider />`
 
 #### `isOpen?: boolean`
 
