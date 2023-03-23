@@ -59,11 +59,11 @@ export type TExtendedMaskProps = {
   };
 };
 
-export interface IProps extends TExtendedMaskProps {
+export interface IMaskProps extends TExtendedMaskProps {
   referenceElement: Element | null;
 }
 
-const Mask: FC<IProps> = props => {
+export const Mask: FC<IMaskProps> = props => {
   const { referenceElement } = props;
 
   const {
@@ -125,5 +125,3 @@ const Mask: FC<IProps> = props => {
     />
   );
 };
-
-export default Mask;

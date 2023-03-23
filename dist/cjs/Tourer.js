@@ -31,7 +31,7 @@ const react_1 = __importStar(require("react"));
 const react_dom_1 = __importDefault(require("react-dom"));
 const react_popper_1 = require("react-popper");
 const Context_1 = require("./Context");
-const Mask_1 = __importDefault(require("./Mask"));
+const Mask_1 = require("./Mask");
 const Tourer = props => {
     const { render } = props;
     const { steps, isOpen, currentStep, maskPadding } = (0, Context_1.useLetsTourContext)();
@@ -64,7 +64,7 @@ const Tourer = props => {
      */
     return react_dom_1.default.createPortal(react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", Object.assign({ ref: setPopperElement, style: Object.assign(Object.assign({}, styles.popper), { zIndex: "100000" }) }, attributes.popper), render()),
-        react_1.default.createElement(Mask_1.default, { referenceElement: referenceElement })), document.querySelector("body"));
+        react_1.default.createElement(Mask_1.Mask, { referenceElement: referenceElement })), document.querySelector("body"));
 };
 exports.Tourer = Tourer;
 //# sourceMappingURL=Tourer.js.map

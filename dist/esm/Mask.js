@@ -1,7 +1,7 @@
 import React, { useId } from "react";
 import { Mask as ReacTourMask } from "@reactour/mask";
 import { useLetsTourContext } from "./Context";
-const Mask = props => {
+export const Mask = props => {
     const { referenceElement } = props;
     const { setIsOpen, isDismissible, backdropClassName, highlightedAreaClassName, maskStyles = {
         backdrop: base => (Object.assign({}, base)),
@@ -36,5 +36,4 @@ const Mask = props => {
             highlightedArea: maskStyles.highlightedArea
         } }));
 };
-export default Mask;
 //# sourceMappingURL=Mask.js.map

@@ -23,6 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Mask = void 0;
 const react_1 = __importStar(require("react"));
 const mask_1 = require("@reactour/mask");
 const Context_1 = require("./Context");
@@ -61,5 +62,5 @@ const Mask = props => {
             highlightedArea: maskStyles.highlightedArea
         } }));
 };
-exports.default = Mask;
+exports.Mask = Mask;
 //# sourceMappingURL=Mask.js.map

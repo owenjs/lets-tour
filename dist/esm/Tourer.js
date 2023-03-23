@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { usePopper } from "react-popper";
 import { useLetsTourContext } from "./Context";
-import Mask from "./Mask";
+import { Mask } from "./Mask";
 export const Tourer = props => {
     const { render } = props;
     const { steps, isOpen, currentStep, maskPadding } = useLetsTourContext();

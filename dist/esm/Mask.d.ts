@@ -52,8 +52,7 @@ export type TExtendedMaskProps = {
         }) => CSSProperties;
     };
 };
-export interface IProps extends TExtendedMaskProps {
+export interface IMaskProps extends TExtendedMaskProps {
     referenceElement: Element | null;
 }
-declare const Mask: FC<IProps>;
-export default Mask;
+export declare const Mask: FC<IMaskProps>;

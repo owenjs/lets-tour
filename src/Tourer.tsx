@@ -2,7 +2,7 @@ import React, { FC, PropsWithChildren, ReactNode, useEffect, useState } from "re
 import ReactDOM from "react-dom";
 import { usePopper } from "react-popper";
 import { useLetsTourContext } from "./Context";
-import Mask from "./Mask";
+import { Mask } from "./Mask";
 
 export interface ITourerProps {
   render: () => ReactNode;
