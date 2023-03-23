@@ -10,7 +10,7 @@ export interface ITourerProps {
 
 export const Tourer: FC<PropsWithChildren<ITourerProps>> = props => {
   const { render } = props;
-  const { steps, isOpen, currentStep } = useLetsTourContext();
+  const { steps, isOpen, currentStep, maskPadding } = useLetsTourContext();
 
   // States needed for Popper.js
   const [referenceElement, setReferenceElement] = useState(document.querySelector(steps[0].selector));
@@ -18,7 +18,15 @@ export const Tourer: FC<PropsWithChildren<ITourerProps>> = props => {
 
   // Popper.js
   const { styles, attributes } = usePopper(referenceElement, popperElement, {
-    placement: steps[currentStep].placement
+    placement: steps[currentStep].placement,
+    modifiers: [
+      {
+        name: "offset",
+        options: {
+          offset: steps[currentStep].offset || maskPadding
+        }
+      }
+    ]
   });
 
   /**

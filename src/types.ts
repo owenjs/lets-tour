@@ -10,4 +10,11 @@ export type LetsTourStep = {
    * @default auto
    */
   placement?: Placement;
+  /**
+   * Offset of Tour Popper
+   * If not set, matches `maskPadding`
+   * @default [0, 0]
+   * ToDo: Add these values to the maskPadding prop for the user
+   */
+  offset?: [number, number];
 };
