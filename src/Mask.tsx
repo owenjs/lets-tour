@@ -8,6 +8,11 @@ export type TExtendedMaskProps = {
    */
   isDismissible?: boolean;
   /**
+   * Padding around the Highlighted Area
+   * @default 0
+   */
+  maskPadding?: number | [number, number];
+  /**
    * Event handler for user clicks on the Tour backdrop
    */
   onBackdropClick?: MouseEventHandler<HTMLDivElement>;
@@ -71,7 +76,8 @@ const Mask: FC<IProps> = props => {
       highlightedArea: base => ({ ...base })
     },
     onBackdropClick,
-    onHighlightedAreaClick
+    onHighlightedAreaClick,
+    maskPadding = 0
   } = useLetsTourContext();
 
   /**
@@ -89,6 +95,7 @@ const Mask: FC<IProps> = props => {
 
   return (
     <ReacTourMask
+      padding={maskPadding}
       maskId={maskId}
       clipId={clipId}
       className={backdropClassName}

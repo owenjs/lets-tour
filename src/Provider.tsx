@@ -46,7 +46,8 @@ export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = p
     highlightedAreaClassName,
     maskStyles,
     onBackdropClick,
-    onHighlightedAreaClick
+    onHighlightedAreaClick,
+    maskPadding
   } = props;
 
   const [isOpen, setIsOpen] = useState(props.isOpen || false);
@@ -127,7 +128,8 @@ export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = p
         highlightedAreaClassName,
         maskStyles,
         onBackdropClick,
-        onHighlightedAreaClick
+        onHighlightedAreaClick,
+        maskPadding
       }}
     >
       {children}
