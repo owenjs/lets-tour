@@ -11,7 +11,7 @@ export type LetsTourStep = {
    */
   placement?: Placement;
   /**
-   * Offset of Tour Popper
+   * Offset the Tour Popper
    * If not set, matches `maskPadding`
    * @default [0, 0]
    * ToDo: Add these values to the maskPadding prop for the user
