@@ -2,7 +2,7 @@ import React, { FC, PropsWithChildren, ReactNode, useEffect, useState } from "re
 import { TExtendedMaskProps } from "./Mask";
 import { LetsTourContext } from "./Context";
 import { Tourer } from "./Tourer";
-import { LetsTourStep } from "./types";
+import { TLetsTourStep } from "./types";
 
 export interface ILetsTourProviderProps extends TExtendedMaskProps {
   /**
@@ -13,7 +13,7 @@ export interface ILetsTourProviderProps extends TExtendedMaskProps {
   /**
    * Each step in the Tour
    */
-  steps: LetsTourStep[];
+  steps: TLetsTourStep[];
   /**
    * Component to render the popover
    */

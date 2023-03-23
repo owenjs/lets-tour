@@ -1,6 +1,6 @@
 import { Placement } from "@popperjs/core";
 
-export type LetsTourStep = {
+export type TLetsTourStep = {
   /**
    * CSS selector use to position of the Tour Popover
    */

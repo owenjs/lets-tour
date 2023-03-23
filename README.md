@@ -81,16 +81,34 @@ const App = () => {
 
 ## Component API
 
-## LetsTourProvider
+## ILetsTourProviderProps
+
+```jsx
+import { LetsTourProvider } from "@owenjs/lets-tour";
+
+const App = () => {
+  const { setIsOpen } = useLetsTourContext();
+
+  const handleOpenTour = () => {
+    setIsOpen(true)
+  };
+
+  return (
+    <LetsTourProvider {...ILetsTourProviderProps}>
+      {/* Rest of your React App! */}
+    </LetsTourProvider>
+  );
+};
+```
 
 #### `isOpen?: boolean`
 
 Allow Tourer to be a controlled component\
 @default false
 
-#### `steps: LetsTourStep[]`
+#### `steps: TLetsTourStep[]`
 
-Each step in the Tour, see [LetsTourStep](#LetsTourStep)
+Each step in the Tour, see [TLetsTourStep](#TLetsTourStep)
 
 #### `component: () => ReactNode`
 
@@ -167,11 +185,17 @@ type maskStyles = {
 };
 ```
 
-## useLetsTourContext
+## TTourContext
 
-#### `steps: LetsTourStep[]`
+```jsx
+import { useLetsTourContext } from "@owenjs/lets-tour";
 
-Each step in the Tour, see [LetsTourStep](#LetsTourStep)
+const { ... } = useLetsTourContext();
+```
+
+#### `steps: TLetsTourStep[]`
+
+Each step in the Tour, see [TLetsTourStep](#LetsTourStep)
 
 #### `isOpen: boolean`
 
@@ -201,7 +225,7 @@ Go back a step in the Tour
 
 Go forward a step in the Tour
 
-## LetsTourStep
+## TLetsTourStep
 
 #### `selector: string`
 

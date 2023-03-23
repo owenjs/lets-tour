@@ -1,12 +1,12 @@
 import { TExtendedMaskProps } from "./Mask";
-import { LetsTourStep } from "./types";
+import { TLetsTourStep } from "./types";
 import { createContext, Dispatch, SetStateAction, useContext } from "react";
 
 export type TTourContext = {
   /**
    * Each step in the Tour
    */
-  steps: LetsTourStep[];
+  steps: TLetsTourStep[];
   /**
    * Open state of the Tour
    */
