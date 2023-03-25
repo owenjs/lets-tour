@@ -1,5 +1,5 @@
 {
-  "name": "lets-tour",
+  "name": "@owenjs/lets-tour",
   "version": "0.1.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -13,6 +13,7 @@
   },
   "author": "owenjs",
   "license": "MIT",
+  "homepage": "https://github.com/owenjs/lets-tour",
   "repository": {
     "type": "git",
     "url": "https://github.com/owenjs/lets-tour"
