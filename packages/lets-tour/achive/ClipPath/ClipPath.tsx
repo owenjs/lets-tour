@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useState } from "react";
-import useWindowDimensions from "achive/helpers/window";
+import { FC, useEffect, useState } from "react";
+import useWindowDimensions from "../helpers/window";
 
 export interface IClipPathProps {
   element?: HTMLElement | null;

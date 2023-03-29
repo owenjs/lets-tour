@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import makePassive from "achive/helpers/isPassiveSupported";
+import makePassive from "../helpers/isPassiveSupported";
 
 const getWindowDimensions = () => ({
   width: Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
