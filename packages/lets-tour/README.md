@@ -41,14 +41,14 @@ const Popover = () => {
   const content = useMemo(() => {
     switch (currentStep) {
       case 0:
-        return "Step 1"
+        return "Step 1";
       case 1:
-        return "Step 2"
+        return "Step 2";
     }
   }, [currentStep]);
 
   return (
-    <div style={{background: "#ffffff"}}>
+    <div style={{ background: "#ffffff" }}>
       {content}
       <button onClick={handleBack}>Back</button>
       <button onClick={handleNext}>Next</button>
@@ -61,18 +61,18 @@ const Popover = () => {
  */
 const App = () => {
   const { setIsOpen } = useLetsTourContext();
-  
+
   const handleOpenTour = () => {
-    setIsOpen(true)
+    setIsOpen(true);
   };
-  
+
   return (
     <LetsTourProvider steps={STEPS} component={Popover}>
       <div className="step-1">Step 1 Item</div>
       <div className="step-2">Step 2 Item</div>
-      
+
       <button onClick={handleOpenTour}>Open Tour</button>
-      
+
       {/* Rest of your React App! */}
     </LetsTourProvider>
   );
@@ -90,14 +90,10 @@ const App = () => {
   const { setIsOpen } = useLetsTourContext();
 
   const handleOpenTour = () => {
-    setIsOpen(true)
+    setIsOpen(true);
   };
 
-  return (
-    <LetsTourProvider {...ILetsTourProviderProps}>
-      {/* Rest of your React App! */}
-    </LetsTourProvider>
-  );
+  return <LetsTourProvider {...ILetsTourProviderProps}>{/* Rest of your React App! */}</LetsTourProvider>;
 };
 ```
 
@@ -159,29 +155,29 @@ Optionally extend the default styles using the `base` param
 
 ```ts
 type maskStyles = {
-    /**
-     * Styles for the Tour backdrop
-     * @param base default styles
-     */
-    backdrop?: (base: CSSProperties) => CSSProperties;
-    /**
-     * Styles for the Tour Highlighted Area
-     * @param base default styles
-     * @param props
-     * @param props.x x position of the Highlighted Area
-     * @param props.y y position of the Highlighted Area
-     * @param props.width width of the Highlighted Area
-     * @param props.height height of the Highlighted Area
-     */
-    highlightedArea?: (
-      base: CSSProperties,
-      props: {
-        x: number;
-        y: number;
-        width: number;
-        height: number;
-      }
-    ) => CSSProperties;
+  /**
+   * Styles for the Tour backdrop
+   * @param base default styles
+   */
+  backdrop?: (base: CSSProperties) => CSSProperties;
+  /**
+   * Styles for the Tour Highlighted Area
+   * @param base default styles
+   * @param props
+   * @param props.x x position of the Highlighted Area
+   * @param props.y y position of the Highlighted Area
+   * @param props.width width of the Highlighted Area
+   * @param props.height height of the Highlighted Area
+   */
+  highlightedArea?: (
+    base: CSSProperties,
+    props: {
+      x: number;
+      y: number;
+      width: number;
+      height: number;
+    }
+  ) => CSSProperties;
 };
 ```
 

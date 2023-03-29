@@ -10,7 +10,9 @@
   ],
   "scripts": {
     "build": "yarn workspace @owenjs/lets-tour run build",
-    "format": "prettier -write ."
+    "format": "prettier -w .",
+    "pre-commit": "lint-staged",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -22,10 +24,16 @@
     "url": "https://github.com/owenjs/lets-tour/issues"
   },
   "homepage": "https://github.com/owenjs/lets-tour#readme",
-  "dependencies": {},
+  "dependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0"
+  },
   "prettier": "@3sidedcube/prettier-config",
   "devDependencies": {
     "@3sidedcube/prettier-config": "^1.0.0",
     "prettier": "^2.8.7"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,css,mdx}": "prettier --write"
   }
 }
