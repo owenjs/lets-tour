@@ -8,11 +8,10 @@ export type TExtendedMaskProps = {
    */
   isDismissible?: boolean;
   /**
-   * Padding around the Highlighted Areass
+   * Padding around the Highlighted Area
    * @default [0, 0]
    */
   maskPadding?: [number, number];
-
   /**
    * Event handler for user clicks on the Tour backdrop
    */
