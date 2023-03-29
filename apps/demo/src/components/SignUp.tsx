@@ -20,7 +20,7 @@ const SignUp: FC<IProps> = props => {
         </div>
 
         <div className="mx-auto mt-8 max-w-xl">
-          <form action="#" className="sm:flex sm:gap-4">
+          <form data-tour-step="5" action="#" className="sm:flex sm:gap-4">
             <div className="sm:flex-1">
               <label htmlFor="email" className="sr-only">
                 Email

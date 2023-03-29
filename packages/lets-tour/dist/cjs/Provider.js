@@ -28,7 +28,7 @@ const react_1 = __importStar(require("react"));
 const Context_1 = require("./Context");
 const Tourer_1 = require("./Tourer");
 const LetsTourProvider = props => {
-    const { children, component, steps, onOpen, onClose, onChange, isDismissible, backdropClassName, highlightedAreaClassName, maskStyles, onBackdropClick, onHighlightedAreaClick, maskPadding } = props;
+    const { children, Component, steps, onOpen, onClose, onChange, isDismissible, backdropClassName, highlightedAreaClassName, maskStyles, onBackdropClick, onHighlightedAreaClick, maskPadding } = props;
     const [isOpen, setIsOpen] = (0, react_1.useState)(props.isOpen || false);
     const [currentStep, setCurrentStep] = (0, react_1.useState)(0);
     /**
@@ -103,7 +103,8 @@ const LetsTourProvider = props => {
             maskPadding
         } },
         children,
-        react_1.default.createElement(Tourer_1.Tourer, { render: component })));
+        react_1.default.createElement(Tourer_1.Tourer, null,
+            react_1.default.createElement(Component, null))));
 };
 exports.LetsTourProvider = LetsTourProvider;
 //# sourceMappingURL=Provider.js.map

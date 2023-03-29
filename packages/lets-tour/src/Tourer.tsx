@@ -1,16 +1,14 @@
-import React, { FC, PropsWithChildren, ReactNode, useEffect, useState } from "react";
+import React, { FC, PropsWithChildren, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { usePopper } from "react-popper";
 import { useLetsTourContext } from "./Context";
 import { Mask } from "./Mask";
 
-export interface ITourerProps {
-  render: () => ReactNode;
-}
+export interface ITourerProps {}
 
 export const Tourer: FC<PropsWithChildren<ITourerProps>> = props => {
-  const { render } = props;
-  const { steps, isOpen, currentStep, maskPadding } = useLetsTourContext();
+  const { children } = props;
+  const { steps, isOpen, currentStep } = useLetsTourContext();
 
   // States needed for Popper.js
   const [referenceElement, setReferenceElement] = useState(document.querySelector(steps[0].selector));
@@ -23,7 +21,7 @@ export const Tourer: FC<PropsWithChildren<ITourerProps>> = props => {
       {
         name: "offset",
         options: {
-          offset: steps[currentStep].offset || maskPadding
+          offset: steps[currentStep].offset || [0, 20]
         }
       }
     ]
@@ -34,7 +32,16 @@ export const Tourer: FC<PropsWithChildren<ITourerProps>> = props => {
    * Query the new element in the Tour
    */
   useEffect(() => {
-    setReferenceElement(document.querySelector(steps[currentStep].selector));
+    const currentStepReference = document.querySelector(steps[currentStep].selector);
+
+    setReferenceElement(currentStepReference);
+
+    // Scroll into view
+    currentStepReference?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center"
+    });
   }, [currentStep]);
 
   if (!isOpen) return null;
@@ -45,7 +52,7 @@ export const Tourer: FC<PropsWithChildren<ITourerProps>> = props => {
   return ReactDOM.createPortal(
     <>
       <div ref={setPopperElement} style={{ ...styles.popper, zIndex: "100000" }} {...attributes.popper}>
-        {render()}
+        {children}
       </div>
 
       <Mask referenceElement={referenceElement} />

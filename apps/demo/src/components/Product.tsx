@@ -12,6 +12,7 @@ const Product: FC<IProps> = props => {
           <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
             <div className="grid grid-cols-2 gap-4 md:grid-cols-1">
               <img
+                data-tour-step="3"
                 alt="Les Paul"
                 src="https://images.unsplash.com/photo-1456948927036-ad533e53865c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
                 className="aspect-square w-full rounded-xl object-cover"
@@ -282,7 +283,7 @@ const Product: FC<IProps> = props => {
           </div>
 
           <div className="mt-8 grid grid-cols-1 gap-x-16 gap-y-12 lg:grid-cols-2">
-            <blockquote>
+            <blockquote data-tour-step="4">
               <header className="sm:flex sm:items-center sm:gap-4">
                 <div className="flex">
                   <svg

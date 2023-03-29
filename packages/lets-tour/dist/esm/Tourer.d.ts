@@ -1,5 +1,4 @@
-import { FC, PropsWithChildren, ReactNode } from "react";
+import { FC, PropsWithChildren } from "react";
 export interface ITourerProps {
-    render: () => ReactNode;
 }
 export declare const Tourer: FC<PropsWithChildren<ITourerProps>>;

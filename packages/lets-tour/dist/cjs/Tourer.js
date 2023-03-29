@@ -33,8 +33,8 @@ const react_popper_1 = require("react-popper");
 const Context_1 = require("./Context");
 const Mask_1 = require("./Mask");
 const Tourer = props => {
-    const { render } = props;
-    const { steps, isOpen, currentStep, maskPadding } = (0, Context_1.useLetsTourContext)();
+    const { children } = props;
+    const { steps, isOpen, currentStep } = (0, Context_1.useLetsTourContext)();
     // States needed for Popper.js
     const [referenceElement, setReferenceElement] = (0, react_1.useState)(document.querySelector(steps[0].selector));
     const [popperElement, setPopperElement] = (0, react_1.useState)(null);
@@ -45,7 +45,7 @@ const Tourer = props => {
             {
                 name: "offset",
                 options: {
-                    offset: steps[currentStep].offset || maskPadding
+                    offset: steps[currentStep].offset || [0, 20]
                 }
             }
         ]
@@ -55,7 +55,14 @@ const Tourer = props => {
      * Query the new element in the Tour
      */
     (0, react_1.useEffect)(() => {
-        setReferenceElement(document.querySelector(steps[currentStep].selector));
+        const currentStepReference = document.querySelector(steps[currentStep].selector);
+        setReferenceElement(currentStepReference);
+        // Scroll into view
+        currentStepReference === null || currentStepReference === void 0 ? void 0 : currentStepReference.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center"
+        });
     }, [currentStep]);
     if (!isOpen)
         return null;
@@ -63,7 +70,7 @@ const Tourer = props => {
      * Creates a Popper.js popover for the current Tour Step element
      */
     return react_dom_1.default.createPortal(react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", Object.assign({ ref: setPopperElement, style: Object.assign(Object.assign({}, styles.popper), { zIndex: "100000" }) }, attributes.popper), render()),
+        react_1.default.createElement("div", Object.assign({ ref: setPopperElement, style: Object.assign(Object.assign({}, styles.popper), { zIndex: "100000" }) }, attributes.popper), children),
         react_1.default.createElement(Mask_1.Mask, { referenceElement: referenceElement })), document.querySelector("body"));
 };
 exports.Tourer = Tourer;

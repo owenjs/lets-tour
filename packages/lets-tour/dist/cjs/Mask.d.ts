@@ -6,7 +6,7 @@ export type TExtendedMaskProps = {
     isDismissible?: boolean;
     /**
      * Padding around the Highlighted Area
-     * @default [0, 0]
+     * @default [10, 10]
      */
     maskPadding?: [number, number];
     /**

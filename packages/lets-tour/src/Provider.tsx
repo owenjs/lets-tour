@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, ReactNode, useEffect, useState } from "react";
+import React, { ComponentType, FC, PropsWithChildren, useEffect, useState } from "react";
 import { TExtendedMaskProps } from "./Mask";
 import { LetsTourContext } from "./Context";
 import { Tourer } from "./Tourer";
@@ -17,7 +17,7 @@ export interface ILetsTourProviderProps extends TExtendedMaskProps {
   /**
    * Component to render the popover
    */
-  component: () => ReactNode;
+  Component: ComponentType;
   /**
    * Fired whenever the Tour is opened
    */
@@ -36,7 +36,7 @@ export interface ILetsTourProviderProps extends TExtendedMaskProps {
 export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = props => {
   const {
     children,
-    component,
+    Component,
     steps,
     onOpen,
     onClose,
@@ -134,7 +134,9 @@ export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = p
     >
       {children}
 
-      <Tourer render={component} />
+      <Tourer>
+        <Component />
+      </Tourer>
     </LetsTourContext.Provider>
   );
 };

@@ -9,7 +9,7 @@ export type TExtendedMaskProps = {
   isDismissible?: boolean;
   /**
    * Padding around the Highlighted Area
-   * @default [0, 0]
+   * @default [10, 10]
    */
   maskPadding?: [number, number];
   /**
@@ -77,7 +77,7 @@ export const Mask: FC<IMaskProps> = props => {
     },
     onBackdropClick,
     onHighlightedAreaClick,
-    maskPadding = [0, 0]
+    maskPadding = [10, 10]
   } = useLetsTourContext();
 
   /**

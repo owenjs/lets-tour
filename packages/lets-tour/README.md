@@ -130,7 +130,7 @@ Should the Tour be dismissible by the user clicking on the backdrop?
 #### `maskPadding?: [number, number]`
 
 Padding around the Highlighted Area\
-@default [0, 0]
+@default [10, 10]
 
 #### `onBackdropClick?: MouseEventHandler<HTMLDivElement>`
 
@@ -235,5 +235,4 @@ Placement of Tour Popover around selected element\
 #### `offset?: [number, number]`
 
 Offset the Tour Popper\
-If not set, matches [`maskPadding`](#maskpadding-number-number)\
-@default [0, 0]
+@default [0, 20]

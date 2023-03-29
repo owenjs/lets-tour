@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { LetsTourContext } from "./Context";
 import { Tourer } from "./Tourer";
 export const LetsTourProvider = props => {
-    const { children, component, steps, onOpen, onClose, onChange, isDismissible, backdropClassName, highlightedAreaClassName, maskStyles, onBackdropClick, onHighlightedAreaClick, maskPadding } = props;
+    const { children, Component, steps, onOpen, onClose, onChange, isDismissible, backdropClassName, highlightedAreaClassName, maskStyles, onBackdropClick, onHighlightedAreaClick, maskPadding } = props;
     const [isOpen, setIsOpen] = useState(props.isOpen || false);
     const [currentStep, setCurrentStep] = useState(0);
     /**
@@ -77,6 +77,7 @@ export const LetsTourProvider = props => {
             maskPadding
         } },
         children,
-        React.createElement(Tourer, { render: component })));
+        React.createElement(Tourer, null,
+            React.createElement(Component, null))));
 };
 //# sourceMappingURL=Provider.js.map

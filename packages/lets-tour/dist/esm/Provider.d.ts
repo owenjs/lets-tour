@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ReactNode } from "react";
+import { ComponentType, FC, PropsWithChildren } from "react";
 import { TExtendedMaskProps } from "./Mask";
 import { TLetsTourStep } from "./types";
 export interface ILetsTourProviderProps extends TExtendedMaskProps {
@@ -14,7 +14,7 @@ export interface ILetsTourProviderProps extends TExtendedMaskProps {
     /**
      * Component to render the popover
      */
-    component: () => ReactNode;
+    Component: ComponentType;
     /**
      * Fired whenever the Tour is opened
      */

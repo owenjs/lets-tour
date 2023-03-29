@@ -12,8 +12,7 @@ export type TLetsTourStep = {
   placement?: Placement;
   /**
    * Offset the Tour Popper
-   * If not set, matches `maskPadding`
-   * @default [0, 0]
+   * @default [0, 20]
    * ToDo: Add these values to the maskPadding prop for the user
    */
   offset?: [number, number];

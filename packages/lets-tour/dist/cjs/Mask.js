@@ -32,7 +32,7 @@ const Mask = props => {
     const { setIsOpen, isDismissible, backdropClassName, highlightedAreaClassName, maskStyles = {
         backdrop: base => (Object.assign({}, base)),
         highlightedArea: base => (Object.assign({}, base))
-    }, onBackdropClick, onHighlightedAreaClick, maskPadding = [0, 0] } = (0, Context_1.useLetsTourContext)();
+    }, onBackdropClick, onHighlightedAreaClick, maskPadding = [10, 10] } = (0, Context_1.useLetsTourContext)();
     /**
      * Dismiss the Tour if the user clicks on the backdrop
      * @param e HTMLDivElement click event
