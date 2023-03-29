@@ -191,7 +191,7 @@ const { ... } = useLetsTourContext();
 
 #### `steps: TLetsTourStep[]`
 
-Each step in the Tour, see [TLetsTourStep](#LetsTourStep)
+Each step in the Tour, see [TLetsTourStep](#TLetsTourStep)
 
 #### `isOpen: boolean`
 
