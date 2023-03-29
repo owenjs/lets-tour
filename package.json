@@ -9,6 +9,7 @@
     "./packages/*"
   ],
   "scripts": {
+    "demo": "yarn workspace demo run dev",
     "build": "yarn workspace @owenjs/lets-tour run build",
     "format": "prettier -w .",
     "pre-commit": "lint-staged",
