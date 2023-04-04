@@ -24,6 +24,10 @@ export type TTourContext = {
    */
   setCurrentStep: Dispatch<SetStateAction<number>>;
   /**
+   * Start the Tour programmatically
+   */
+  handleStartTour: () => void;
+  /**
    * End the Tour programmatically
    */
   handleEndTour: () => void;
@@ -44,6 +48,7 @@ export const LetsTourContext = createContext<TTourContext>({
   setIsOpen: () => {},
   currentStep: 0,
   setCurrentStep: () => {},
+  handleStartTour: () => {},
   handleEndTour: () => {},
   handleBack: () => {},
   handleNext: () => {}
