@@ -6,6 +6,7 @@ export const LetsTourContext = createContext({
     setIsOpen: () => { },
     currentStep: 0,
     setCurrentStep: () => { },
+    handleStartTour: () => { },
     handleEndTour: () => { },
     handleBack: () => { },
     handleNext: () => { }

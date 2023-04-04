@@ -18,14 +18,14 @@ yarn add @owenjs/lets-tour
 
 ## Usage
 
-```jsx
-import { LetsTourProvider, useLetsTourContext } from "@owenjs/lets-tour";
+```tsx
+import { TLetsTourStep, LetsTourProvider, useLetsTourContext } from "@owenjs/lets-tour";
 import { useMemo } from "react";
 
 /**
  * Each step in the Tour
  */
-const STEPS = [
+const STEPS: TLetsTourStep[] = [
   {
     selector: `[data-tour-step="1"]`
   },

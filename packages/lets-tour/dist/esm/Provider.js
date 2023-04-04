@@ -26,6 +26,13 @@ export const LetsTourProvider = props => {
         }
     }, [isOpen]);
     /**
+     * Handle the Tour Starting
+     * Open the Tour and reset the current step
+     */
+    const handleStartTour = () => {
+        setIsOpen(true);
+    };
+    /**
      * Handle the Tour Ending
      * Close the Tour and reset the current step
      */
@@ -65,6 +72,7 @@ export const LetsTourProvider = props => {
             setIsOpen,
             currentStep,
             setCurrentStep,
+            handleStartTour,
             handleEndTour,
             handleBack,
             handleNext,

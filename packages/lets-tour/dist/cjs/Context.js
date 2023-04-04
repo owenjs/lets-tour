@@ -9,6 +9,7 @@ exports.LetsTourContext = (0, react_1.createContext)({
     setIsOpen: () => { },
     currentStep: 0,
     setCurrentStep: () => { },
+    handleStartTour: () => { },
     handleEndTour: () => { },
     handleBack: () => { },
     handleNext: () => { }

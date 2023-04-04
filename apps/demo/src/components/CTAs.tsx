@@ -1,9 +1,10 @@
+import { useLetsTourContext } from "@owenjs/lets-tour";
 import { FC } from "react";
 
 export interface IProps {}
 
 const CTAs: FC<IProps> = props => {
-  const {} = props;
+  const { handleStartTour } = useLetsTourContext();
 
   return (
     <section className="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center">
@@ -20,12 +21,12 @@ const CTAs: FC<IProps> = props => {
           </p>
 
           <div className="mt-4 md:mt-8">
-            <a
-              href="#"
+            <button
+              onClick={handleStartTour}
               className="inline-block rounded bg-emerald-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-emerald-700 focus:outline-none focus:ring focus:ring-yellow-400"
             >
-              Get Started Today
-            </a>
+              Start Tour
+            </button>
           </div>
         </div>
       </div>

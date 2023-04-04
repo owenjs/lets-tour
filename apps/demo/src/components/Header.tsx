@@ -4,11 +4,7 @@ import { FC } from "react";
 export interface IProps {}
 
 const Header: FC<IProps> = props => {
-  const { setIsOpen } = useLetsTourContext();
-
-  const handleOpenTour = () => {
-    setIsOpen(true);
-  };
+  const { handleStartTour } = useLetsTourContext();
 
   return (
     <header aria-label="Site Header" className="bg-white">
@@ -68,17 +64,10 @@ const Header: FC<IProps> = props => {
             <div className="sm:flex sm:gap-4">
               <button
                 className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
-                onClick={handleOpenTour}
+                onClick={handleStartTour}
               >
                 Start Tour
               </button>
-
-              <a
-                className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
-                href="/"
-              >
-                Register
-              </a>
             </div>
 
             <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">

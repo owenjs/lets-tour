@@ -14,7 +14,7 @@
     "build:demo": "yarn workspace demo run build",
     "format": "prettier -w .",
     "pre-commit": "lint-staged",
-    "prepare": "husky install"
+    "prepare": "husky install && yarn run build:package"
   },
   "repository": {
     "type": "git",

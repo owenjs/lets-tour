@@ -23,6 +23,10 @@ export type TTourContext = {
      */
     setCurrentStep: Dispatch<SetStateAction<number>>;
     /**
+     * Start the Tour programmatically
+     */
+    handleStartTour: () => void;
+    /**
      * End the Tour programmatically
      */
     handleEndTour: () => void;
