@@ -76,6 +76,14 @@ export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = p
   }, [isOpen]);
 
   /**
+   * Handle the Tour Starting
+   * Open the Tour and reset the current step
+   */
+  const handleStartTour = () => {
+    setIsOpen(true);
+  };
+
+  /**
    * Handle the Tour Ending
    * Close the Tour and reset the current step
    */
@@ -120,6 +128,7 @@ export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = p
         setIsOpen,
         currentStep,
         setCurrentStep,
+        handleStartTour,
         handleEndTour,
         handleBack,
         handleNext,
