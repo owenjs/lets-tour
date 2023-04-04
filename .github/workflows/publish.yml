@@ -15,13 +15,9 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-      - name: Install dependencies
-        run: yarn install
-      - name: Build
-        run: yarn run build:package
-      - name: Publish to NPM
-        with:
-          path: './packages/lets-tour'
+      - run: yarn install
+      - run: yarn run build:package
+      - run: cd ./packages/lets-tour
+      - run: npm publish --dry-run
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: npm publish --dry-run
