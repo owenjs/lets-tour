@@ -8,6 +8,8 @@ Styling of popover is completely upto you!
 
 Coded with ❤️ by [owenjs](https://github.com/owenjs)
 
+## [Demo](https://owenjs.github.io/lets-tour/)
+
 ## Install
 
 ```shell
@@ -208,6 +210,10 @@ Current step of the Tour (starting at 0)
 #### `setCurrentStep: Dispatch<SetStateAction<number>>`
 
 Set state for the current step of the Tour (starting at 0)
+
+#### `handleStartTour: () => void`
+
+Start the Tour programmatically
 
 #### `handleEndTour: () => void`
 
