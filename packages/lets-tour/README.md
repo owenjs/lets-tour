@@ -20,17 +20,17 @@ yarn add @owenjs/lets-tour
 
 ```jsx
 import { LetsTourProvider, useLetsTourContext } from "@owenjs/lets-tour";
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 
 /**
  * Each step in the Tour
  */
 const STEPS = [
   {
-    selector: ".step-1"
+    selector: `[data-tour-step="1"]`
   },
   {
-    selector: ".step-2"
+    selector: `[data-tour-step="2"]`
   }
 ];
 
@@ -62,20 +62,25 @@ const Popover = () => {
  * Main app component
  */
 const App = () => {
-  const { setIsOpen } = useLetsTourContext();
-
-  const handleOpenTour = () => {
-    setIsOpen(true);
-  };
+  const { handleStartTour } = useLetsTourContext();
 
   return (
-    <LetsTourProvider steps={STEPS} component={Popover}>
-      <div className="step-1">Step 1 Item</div>
-      <div className="step-2">Step 2 Item</div>
+    <>
+      <div data-tour-step="1">Step 1 Item</div>
+      <div data-tour-step="2">Step 2 Item</div>
 
-      <button onClick={handleOpenTour}>Open Tour</button>
+      <button onClick={handleStartTour}>Open Tour</button>
+    </>
+  );
+};
 
-      {/* Rest of your React App! */}
+/**
+ * React Index File
+ */
+const Index = () => {
+  return (
+    <LetsTourProvider steps={STEPS} Component={Popover}>
+      <App />
     </LetsTourProvider>
   );
 };
@@ -89,13 +94,13 @@ const App = () => {
 import { LetsTourProvider } from "@owenjs/lets-tour";
 
 const App = () => {
-  const { setIsOpen } = useLetsTourContext();
-
-  const handleOpenTour = () => {
-    setIsOpen(true);
-  };
-
-  return <LetsTourProvider {...ILetsTourProviderProps}>{/* Rest of your React App! */}</LetsTourProvider>;
+  // ...
+  
+  return (
+    <LetsTourProvider {...ILetsTourProviderProps}>
+      {/* Rest of your React App! */}
+    </LetsTourProvider>
+  );
 };
 ```
 
@@ -108,7 +113,7 @@ Allow Tourer to be a controlled component\
 
 Each step in the Tour, see [TLetsTourStep](#TLetsTourStep)
 
-#### `component: () => ReactNode`
+#### `Component: () => ReactNode`
 
 Component to render the popover
 
@@ -188,7 +193,11 @@ type maskStyles = {
 ```jsx
 import { useLetsTourContext } from "@owenjs/lets-tour";
 
-const { ... } = useLetsTourContext();
+const App = () => {
+  const { ... } = useLetsTourContext();
+  
+  // ...
+};
 ```
 
 #### `steps: TLetsTourStep[]`
