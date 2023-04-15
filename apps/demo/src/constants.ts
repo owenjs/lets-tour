@@ -2,7 +2,7 @@ import { TLetsTourStep } from "@owenjs/lets-tour";
 
 export const TOUR_STEPS: TLetsTourStep[] = [
   {
-    selector: '[data-tour-step="5"]',
+    selector: '[data-tour-step="1"]',
     placement: "right-start",
     offset: [-10, 20]
   },
