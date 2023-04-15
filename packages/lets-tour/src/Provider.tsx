@@ -1,4 +1,4 @@
-import React, { ComponentType, FC, PropsWithChildren, useEffect, useState } from "react";
+import React, { ComponentType, FC, PropsWithChildren, useEffect, useRef, useState } from "react";
 import { TExtendedMaskProps } from "./Mask";
 import { LetsTourContext } from "./Context";
 import { Tourer } from "./Tourer";
@@ -50,6 +50,7 @@ export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = p
     maskPadding
   } = props;
 
+  const hasMounted = useRef(false);
   const [isOpen, setIsOpen] = useState(props.isOpen || false);
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -66,6 +67,12 @@ export const LetsTourProvider: FC<PropsWithChildren<ILetsTourProviderProps>> = p
    * Fire listener events whenever the open state changes
    */
   useEffect(() => {
+    // On fire listener events after initial mount
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+
     onChange?.(isOpen);
 
     if (isOpen) {

@@ -62,8 +62,16 @@ exports[`Lets Tour should render popover if open initially 1`] = `
   >
     Step 2 Item
   </div>
+  <div
+    data-tour-step="3"
+  >
+    Step 3 Item
+  </div>
   <button>
     Open Tour
+  </button>
+  <button>
+    Close Tour
   </button>
 </body>
 `;
@@ -80,8 +88,16 @@ exports[`Lets Tour should render without popover 1`] = `
   >
     Step 2 Item
   </div>
+  <div
+    data-tour-step="3"
+  >
+    Step 3 Item
+  </div>
   <button>
     Open Tour
+  </button>
+  <button>
+    Close Tour
   </button>
 </body>
 `;
