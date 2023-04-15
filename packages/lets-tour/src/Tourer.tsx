@@ -32,6 +32,8 @@ export const Tourer: FC<PropsWithChildren<ITourerProps>> = props => {
    * Query the new element in the Tour
    */
   useEffect(() => {
+    if (!isOpen) return;
+
     const currentStepReference = document.querySelector(steps[currentStep].selector);
 
     setReferenceElement(currentStepReference);
@@ -42,7 +44,7 @@ export const Tourer: FC<PropsWithChildren<ITourerProps>> = props => {
       block: "center",
       inline: "center"
     });
-  }, [currentStep]);
+  }, [currentStep, isOpen]);
 
   if (!isOpen) return null;
 

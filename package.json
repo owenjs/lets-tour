@@ -13,6 +13,7 @@
     "build:package": "yarn workspace @owenjs/lets-tour run build",
     "build:demo": "yarn workspace demo run build",
     "format": "prettier -w .",
+    "test": "yarn workspace @owenjs/lets-tour run test",
     "pre-commit": "lint-staged",
     "prepare": "husky install && yarn run build:package"
   },
