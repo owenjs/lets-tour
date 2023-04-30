@@ -29,6 +29,8 @@ const mask_1 = require("@reactour/mask");
 const Context_1 = require("./Context");
 const Mask = props => {
     const { referenceElement } = props;
+    const maskId = (0, react_1.useId)();
+    const clipId = (0, react_1.useId)();
     const { setIsOpen, isDismissible, backdropClassName, highlightedAreaClassName, maskStyles = {
         backdrop: base => (Object.assign({}, base)),
         highlightedArea: base => (Object.assign({}, base))
@@ -42,9 +44,7 @@ const Mask = props => {
             setIsOpen(false);
         onBackdropClick === null || onBackdropClick === void 0 ? void 0 : onBackdropClick(e);
     };
-    const maskId = (0, react_1.useId)();
-    const clipId = (0, react_1.useId)();
-    return (react_1.default.createElement(mask_1.Mask, { padding: maskPadding, maskId: maskId, clipId: clipId, className: backdropClassName, highlightedAreaClassName: highlightedAreaClassName, onClick: handleBackDropClick, onClickHighlighted: onHighlightedAreaClick, sizes: (referenceElement === null || referenceElement === void 0 ? void 0 : referenceElement.getBoundingClientRect()) || {
+    return (react_1.default.createElement(mask_1.Mask, { padding: maskPadding, maskId: maskId, clipId: clipId, className: backdropClassName, onClick: handleBackDropClick, highlightedAreaClassName: highlightedAreaClassName, onClickHighlighted: onHighlightedAreaClick, sizes: (referenceElement === null || referenceElement === void 0 ? void 0 : referenceElement.getBoundingClientRect()) || {
             bottom: 0,
             height: 0,
             left: 0,

@@ -3,6 +3,8 @@ import { Mask as ReacTourMask } from "@reactour/mask";
 import { useLetsTourContext } from "./Context";
 export const Mask = props => {
     const { referenceElement } = props;
+    const maskId = useId();
+    const clipId = useId();
     const { setIsOpen, isDismissible, backdropClassName, highlightedAreaClassName, maskStyles = {
         backdrop: base => (Object.assign({}, base)),
         highlightedArea: base => (Object.assign({}, base))
@@ -16,9 +18,7 @@ export const Mask = props => {
             setIsOpen(false);
         onBackdropClick === null || onBackdropClick === void 0 ? void 0 : onBackdropClick(e);
     };
-    const maskId = useId();
-    const clipId = useId();
-    return (React.createElement(ReacTourMask, { padding: maskPadding, maskId: maskId, clipId: clipId, className: backdropClassName, highlightedAreaClassName: highlightedAreaClassName, onClick: handleBackDropClick, onClickHighlighted: onHighlightedAreaClick, sizes: (referenceElement === null || referenceElement === void 0 ? void 0 : referenceElement.getBoundingClientRect()) || {
+    return (React.createElement(ReacTourMask, { padding: maskPadding, maskId: maskId, clipId: clipId, className: backdropClassName, onClick: handleBackDropClick, highlightedAreaClassName: highlightedAreaClassName, onClickHighlighted: onHighlightedAreaClick, sizes: (referenceElement === null || referenceElement === void 0 ? void 0 : referenceElement.getBoundingClientRect()) || {
             bottom: 0,
             height: 0,
             left: 0,

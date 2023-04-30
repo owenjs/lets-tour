@@ -26,6 +26,8 @@ export const Tourer = props => {
      * Query the new element in the Tour
      */
     useEffect(() => {
+        if (!isOpen)
+            return;
         const currentStepReference = document.querySelector(steps[currentStep].selector);
         setReferenceElement(currentStepReference);
         // Scroll into view
@@ -34,7 +36,7 @@ export const Tourer = props => {
             block: "center",
             inline: "center"
         });
-    }, [currentStep]);
+    }, [currentStep, isOpen]);
     if (!isOpen)
         return null;
     /**
@@ -42,6 +44,6 @@ export const Tourer = props => {
      */
     return ReactDOM.createPortal(React.createElement(React.Fragment, null,
         React.createElement("div", Object.assign({ ref: setPopperElement, style: Object.assign(Object.assign({}, styles.popper), { zIndex: "100000" }) }, attributes.popper), children),
-        React.createElement(Mask, { referenceElement: referenceElement })), document.querySelector("body"));
+        React.createElement(Mask, { referenceElement: referenceElement })), document.body);
 };
 //# sourceMappingURL=Tourer.js.map

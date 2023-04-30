@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { LetsTourContext } from "./Context";
 import { Tourer } from "./Tourer";
 export const LetsTourProvider = props => {
     const { children, Component, steps, onOpen, onClose, onChange, isDismissible, backdropClassName, highlightedAreaClassName, maskStyles, onBackdropClick, onHighlightedAreaClick, maskPadding } = props;
+    const hasMounted = useRef(false);
     const [isOpen, setIsOpen] = useState(props.isOpen || false);
     const [currentStep, setCurrentStep] = useState(0);
     /**
@@ -17,6 +18,11 @@ export const LetsTourProvider = props => {
      * Fire listener events whenever the open state changes
      */
     useEffect(() => {
+        // On fire listener events after initial mount
+        if (!hasMounted.current) {
+            hasMounted.current = true;
+            return;
+        }
         onChange === null || onChange === void 0 ? void 0 : onChange(isOpen);
         if (isOpen) {
             onOpen === null || onOpen === void 0 ? void 0 : onOpen();
