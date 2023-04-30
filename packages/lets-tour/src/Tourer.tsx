@@ -59,6 +59,6 @@ export const Tourer: FC<PropsWithChildren<ITourerProps>> = props => {
 
       <Mask referenceElement={referenceElement} />
     </>,
-    document.querySelector("body")!
+    document.body
   );
 };

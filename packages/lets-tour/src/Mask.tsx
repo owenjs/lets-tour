@@ -59,12 +59,15 @@ export type TExtendedMaskProps = {
   };
 };
 
-export interface IMaskProps extends TExtendedMaskProps {
+export interface IMaskProps {
   referenceElement: Element | null;
 }
 
 export const Mask: FC<IMaskProps> = props => {
   const { referenceElement } = props;
+
+  const maskId = useId();
+  const clipId = useId();
 
   const {
     setIsOpen,
@@ -90,17 +93,14 @@ export const Mask: FC<IMaskProps> = props => {
     onBackdropClick?.(e);
   };
 
-  const maskId = useId();
-  const clipId = useId();
-
   return (
     <ReacTourMask
       padding={maskPadding}
       maskId={maskId}
       clipId={clipId}
       className={backdropClassName}
-      highlightedAreaClassName={highlightedAreaClassName}
       onClick={handleBackDropClick}
+      highlightedAreaClassName={highlightedAreaClassName}
       onClickHighlighted={onHighlightedAreaClick}
       sizes={
         referenceElement?.getBoundingClientRect() || {

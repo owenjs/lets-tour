@@ -1,0 +1,409 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Lets Tour should apply custom styles to the mark using 'maskStyles' 1`] = `
+<body>
+  <div
+    style="position: absolute; left: 0px; top: 0px; z-index: 100000;"
+  >
+    <div>
+      Popover
+    </div>
+  </div>
+  <div
+    style="opacity: 0.7; left: 0px; top: 0px; position: fixed; z-index: 99999; pointer-events: none; color: red;"
+  >
+    <svg
+      height="768"
+      style="width: 1024px; height: 768px; left: 0px; top: 0px; position: fixed;"
+      width="1024"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <mask
+          id=":r1m:"
+        >
+          <rect
+            fill="white"
+            height="768"
+            width="1024"
+            x="0"
+            y="0"
+          />
+          <rect
+            style="width: 20px; height: 20px; fill: black;"
+          />
+        </mask>
+        <clippath
+          id=":r1n:"
+        >
+          <polygon
+            points="0 0, 0 768, 0 768, 0 0, 20 0, 20 20, 0 20, 0 768, 1024 768, 1024 0"
+          />
+        </clippath>
+      </defs>
+      <rect
+        style="width: 1024px; height: 768px; fill: currentColor; mask: url(#:r1m:);"
+      />
+      <rect
+        style="width: 1024px; height: 768px; fill: currentcolor; pointer-events: auto; clip-path: url(#:r1n:);"
+      />
+      <rect
+        style="width: 20px; height: 20px; pointer-events: auto; fill: transparent; display: none; color: red; top: 0px; left: 0px; min-width: 20px; min-height: 20px;"
+      />
+    </svg>
+  </div>
+  <div
+    data-tour-step="1"
+  >
+    Step 1 Item
+  </div>
+  <div
+    data-tour-step="2"
+  >
+    Step 2 Item
+  </div>
+  <div
+    data-tour-step="3"
+  >
+    Step 3 Item
+  </div>
+  <button>
+    Open Tour
+  </button>
+  <button>
+    Close Tour
+  </button>
+</body>
+`;
+
+exports[`Lets Tour should render custom padding around popover if 'maskPadding' is set 1`] = `
+<body>
+  <div
+    style="position: absolute; left: 0px; top: 0px; z-index: 100000;"
+  >
+    <div>
+      Popover
+    </div>
+  </div>
+  <div
+    style="opacity: 0.7; left: 0px; top: 0px; position: fixed; z-index: 99999; pointer-events: none; color: rgb(0, 0, 0);"
+  >
+    <svg
+      height="768"
+      style="width: 1024px; height: 768px; left: 0px; top: 0px; position: fixed;"
+      width="1024"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <mask
+          id=":r1e:"
+        >
+          <rect
+            fill="white"
+            height="768"
+            width="1024"
+            x="0"
+            y="0"
+          />
+          <rect
+            style="width: 40px; height: 40px; fill: black;"
+          />
+        </mask>
+        <clippath
+          id=":r1f:"
+        >
+          <polygon
+            points="0 0, 0 768, 0 768, 0 0, 40 0, 40 40, 0 40, 0 768, 1024 768, 1024 0"
+          />
+        </clippath>
+      </defs>
+      <rect
+        style="width: 1024px; height: 768px; fill: currentColor; mask: url(#:r1e:);"
+      />
+      <rect
+        style="width: 1024px; height: 768px; fill: currentcolor; pointer-events: auto; clip-path: url(#:r1f:);"
+      />
+      <rect
+        style="width: 40px; height: 40px; pointer-events: auto; fill: transparent; display: none;"
+      />
+    </svg>
+  </div>
+  <div
+    data-tour-step="1"
+  >
+    Step 1 Item
+  </div>
+  <div
+    data-tour-step="2"
+  >
+    Step 2 Item
+  </div>
+  <div
+    data-tour-step="3"
+  >
+    Step 3 Item
+  </div>
+  <button>
+    Open Tour
+  </button>
+  <button>
+    Close Tour
+  </button>
+</body>
+`;
+
+exports[`Lets Tour should render popover if open initially 1`] = `
+<body>
+  <div
+    style="position: absolute; left: 0px; top: 0px; z-index: 100000;"
+  >
+    <div>
+      Popover
+    </div>
+  </div>
+  <div
+    style="opacity: 0.7; left: 0px; top: 0px; position: fixed; z-index: 99999; pointer-events: none; color: rgb(0, 0, 0);"
+  >
+    <svg
+      height="768"
+      style="width: 1024px; height: 768px; left: 0px; top: 0px; position: fixed;"
+      width="1024"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <mask
+          id=":r0:"
+        >
+          <rect
+            fill="white"
+            height="768"
+            width="1024"
+            x="0"
+            y="0"
+          />
+          <rect
+            style="width: 20px; height: 20px; fill: black;"
+          />
+        </mask>
+        <clippath
+          id=":r1:"
+        >
+          <polygon
+            points="0 0, 0 768, 0 768, 0 0, 20 0, 20 20, 0 20, 0 768, 1024 768, 1024 0"
+          />
+        </clippath>
+      </defs>
+      <rect
+        style="width: 1024px; height: 768px; fill: currentColor; mask: url(#:r0:);"
+      />
+      <rect
+        style="width: 1024px; height: 768px; fill: currentcolor; pointer-events: auto; clip-path: url(#:r1:);"
+      />
+      <rect
+        style="width: 20px; height: 20px; pointer-events: auto; fill: transparent; display: none;"
+      />
+    </svg>
+  </div>
+  <div
+    data-tour-step="1"
+  >
+    Step 1 Item
+  </div>
+  <div
+    data-tour-step="2"
+  >
+    Step 2 Item
+  </div>
+  <div
+    data-tour-step="3"
+  >
+    Step 3 Item
+  </div>
+  <button>
+    Open Tour
+  </button>
+  <button>
+    Close Tour
+  </button>
+</body>
+`;
+
+exports[`Lets Tour should render without popover 1`] = `
+<body>
+  <div
+    data-tour-step="1"
+  >
+    Step 1 Item
+  </div>
+  <div
+    data-tour-step="2"
+  >
+    Step 2 Item
+  </div>
+  <div
+    data-tour-step="3"
+  >
+    Step 3 Item
+  </div>
+  <button>
+    Open Tour
+  </button>
+  <button>
+    Close Tour
+  </button>
+</body>
+`;
+
+exports[`Lets Tour should set a custom className for the backdrop if 'backdropClassName' is set 1`] = `
+<body>
+  <div
+    style="position: absolute; left: 0px; top: 0px; z-index: 100000;"
+  >
+    <div>
+      Popover
+    </div>
+  </div>
+  <div
+    class="myClass"
+    style="opacity: 0.7; left: 0px; top: 0px; position: fixed; z-index: 99999; pointer-events: none; color: rgb(0, 0, 0);"
+  >
+    <svg
+      height="768"
+      style="width: 1024px; height: 768px; left: 0px; top: 0px; position: fixed;"
+      width="1024"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <mask
+          id=":r1i:"
+        >
+          <rect
+            fill="white"
+            height="768"
+            width="1024"
+            x="0"
+            y="0"
+          />
+          <rect
+            style="width: 20px; height: 20px; fill: black;"
+          />
+        </mask>
+        <clippath
+          id=":r1j:"
+        >
+          <polygon
+            points="0 0, 0 768, 0 768, 0 0, 20 0, 20 20, 0 20, 0 768, 1024 768, 1024 0"
+          />
+        </clippath>
+      </defs>
+      <rect
+        style="width: 1024px; height: 768px; fill: currentColor; mask: url(#:r1i:);"
+      />
+      <rect
+        style="width: 1024px; height: 768px; fill: currentcolor; pointer-events: auto; clip-path: url(#:r1j:);"
+      />
+      <rect
+        style="width: 20px; height: 20px; pointer-events: auto; fill: transparent; display: none;"
+      />
+    </svg>
+  </div>
+  <div
+    data-tour-step="1"
+  >
+    Step 1 Item
+  </div>
+  <div
+    data-tour-step="2"
+  >
+    Step 2 Item
+  </div>
+  <div
+    data-tour-step="3"
+  >
+    Step 3 Item
+  </div>
+  <button>
+    Open Tour
+  </button>
+  <button>
+    Close Tour
+  </button>
+</body>
+`;
+
+exports[`Lets Tour should set a custom className for the highlighted area if 'highlightedAreaClassName' is set 1`] = `
+<body>
+  <div
+    style="position: absolute; left: 0px; top: 0px; z-index: 100000;"
+  >
+    <div>
+      Popover
+    </div>
+  </div>
+  <div
+    style="opacity: 0.7; left: 0px; top: 0px; position: fixed; z-index: 99999; pointer-events: none; color: rgb(0, 0, 0);"
+  >
+    <svg
+      height="768"
+      style="width: 1024px; height: 768px; left: 0px; top: 0px; position: fixed;"
+      width="1024"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <mask
+          id=":r1k:"
+        >
+          <rect
+            fill="white"
+            height="768"
+            width="1024"
+            x="0"
+            y="0"
+          />
+          <rect
+            style="width: 20px; height: 20px; fill: black;"
+          />
+        </mask>
+        <clippath
+          id=":r1l:"
+        >
+          <polygon
+            points="0 0, 0 768, 0 768, 0 0, 20 0, 20 20, 0 20, 0 768, 1024 768, 1024 0"
+          />
+        </clippath>
+      </defs>
+      <rect
+        style="width: 1024px; height: 768px; fill: currentColor; mask: url(#:r1k:);"
+      />
+      <rect
+        style="width: 1024px; height: 768px; fill: currentcolor; pointer-events: auto; clip-path: url(#:r1l:);"
+      />
+      <rect
+        class="myClass"
+        style="width: 20px; height: 20px; pointer-events: auto; fill: transparent; display: none;"
+      />
+    </svg>
+  </div>
+  <div
+    data-tour-step="1"
+  >
+    Step 1 Item
+  </div>
+  <div
+    data-tour-step="2"
+  >
+    Step 2 Item
+  </div>
+  <div
+    data-tour-step="3"
+  >
+    Step 3 Item
+  </div>
+  <button>
+    Open Tour
+  </button>
+  <button>
+    Close Tour
+  </button>
+</body>
+`;
